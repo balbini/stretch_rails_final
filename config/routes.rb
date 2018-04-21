@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  root "users#index"
+  devise_for :clients
+  root to: "clients#index"
 
-  get "/users", to: "users#index", as: "users"
+resources :clients
+
 
 end
